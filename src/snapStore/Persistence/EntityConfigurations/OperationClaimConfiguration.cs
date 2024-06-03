@@ -6,6 +6,11 @@ using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using NArchitecture.Core.Security.Constants;
+using Application.Features.Categories.Constants;
+using Application.Features.Products.Constants;
+using Application.Features.ProductDescriptions.Constants;
+using Application.Features.ProductImages.Constants;
+using Application.Features.ProductReviews.Constants;
 
 namespace Persistence.EntityConfigurations;
 
@@ -97,6 +102,76 @@ public class OperationClaimConfiguration : IEntityTypeConfiguration<OperationCla
         );
         #endregion
 
+        
+        #region Categories CRUD
+        featureOperationClaims.AddRange(
+            [
+                new() { Id = ++lastId, Name = CategoriesOperationClaims.Admin },
+                new() { Id = ++lastId, Name = CategoriesOperationClaims.Read },
+                new() { Id = ++lastId, Name = CategoriesOperationClaims.Write },
+                new() { Id = ++lastId, Name = CategoriesOperationClaims.Create },
+                new() { Id = ++lastId, Name = CategoriesOperationClaims.Update },
+                new() { Id = ++lastId, Name = CategoriesOperationClaims.Delete },
+            ]
+        );
+        #endregion
+        
+        
+        #region Products CRUD
+        featureOperationClaims.AddRange(
+            [
+                new() { Id = ++lastId, Name = ProductsOperationClaims.Admin },
+                new() { Id = ++lastId, Name = ProductsOperationClaims.Read },
+                new() { Id = ++lastId, Name = ProductsOperationClaims.Write },
+                new() { Id = ++lastId, Name = ProductsOperationClaims.Create },
+                new() { Id = ++lastId, Name = ProductsOperationClaims.Update },
+                new() { Id = ++lastId, Name = ProductsOperationClaims.Delete },
+            ]
+        );
+        #endregion
+        
+        
+        #region ProductDescriptions CRUD
+        featureOperationClaims.AddRange(
+            [
+                new() { Id = ++lastId, Name = ProductDescriptionsOperationClaims.Admin },
+                new() { Id = ++lastId, Name = ProductDescriptionsOperationClaims.Read },
+                new() { Id = ++lastId, Name = ProductDescriptionsOperationClaims.Write },
+                new() { Id = ++lastId, Name = ProductDescriptionsOperationClaims.Create },
+                new() { Id = ++lastId, Name = ProductDescriptionsOperationClaims.Update },
+                new() { Id = ++lastId, Name = ProductDescriptionsOperationClaims.Delete },
+            ]
+        );
+        #endregion
+        
+        
+        #region ProductImages CRUD
+        featureOperationClaims.AddRange(
+            [
+                new() { Id = ++lastId, Name = ProductImagesOperationClaims.Admin },
+                new() { Id = ++lastId, Name = ProductImagesOperationClaims.Read },
+                new() { Id = ++lastId, Name = ProductImagesOperationClaims.Write },
+                new() { Id = ++lastId, Name = ProductImagesOperationClaims.Create },
+                new() { Id = ++lastId, Name = ProductImagesOperationClaims.Update },
+                new() { Id = ++lastId, Name = ProductImagesOperationClaims.Delete },
+            ]
+        );
+        #endregion
+        
+        
+        #region ProductReviews CRUD
+        featureOperationClaims.AddRange(
+            [
+                new() { Id = ++lastId, Name = ProductReviewsOperationClaims.Admin },
+                new() { Id = ++lastId, Name = ProductReviewsOperationClaims.Read },
+                new() { Id = ++lastId, Name = ProductReviewsOperationClaims.Write },
+                new() { Id = ++lastId, Name = ProductReviewsOperationClaims.Create },
+                new() { Id = ++lastId, Name = ProductReviewsOperationClaims.Update },
+                new() { Id = ++lastId, Name = ProductReviewsOperationClaims.Delete },
+            ]
+        );
+        #endregion
+        
         return featureOperationClaims;
     }
 #pragma warning restore S1854 // Unused assignments should be removed
