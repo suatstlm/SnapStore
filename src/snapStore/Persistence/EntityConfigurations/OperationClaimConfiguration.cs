@@ -11,6 +11,7 @@ using Application.Features.Products.Constants;
 using Application.Features.ProductDescriptions.Constants;
 using Application.Features.ProductImages.Constants;
 using Application.Features.ProductReviews.Constants;
+using Application.Features.ProductSizes.Constants;
 
 namespace Persistence.EntityConfigurations;
 
@@ -168,6 +169,20 @@ public class OperationClaimConfiguration : IEntityTypeConfiguration<OperationCla
                 new() { Id = ++lastId, Name = ProductReviewsOperationClaims.Create },
                 new() { Id = ++lastId, Name = ProductReviewsOperationClaims.Update },
                 new() { Id = ++lastId, Name = ProductReviewsOperationClaims.Delete },
+            ]
+        );
+        #endregion
+        
+        
+        #region ProductSizes CRUD
+        featureOperationClaims.AddRange(
+            [
+                new() { Id = ++lastId, Name = ProductSizesOperationClaims.Admin },
+                new() { Id = ++lastId, Name = ProductSizesOperationClaims.Read },
+                new() { Id = ++lastId, Name = ProductSizesOperationClaims.Write },
+                new() { Id = ++lastId, Name = ProductSizesOperationClaims.Create },
+                new() { Id = ++lastId, Name = ProductSizesOperationClaims.Update },
+                new() { Id = ++lastId, Name = ProductSizesOperationClaims.Delete },
             ]
         );
         #endregion

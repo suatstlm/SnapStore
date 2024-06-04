@@ -19,6 +19,7 @@ public class BaseDbContext : DbContext
     public DbSet<ProductDescription> ProductDescriptions { get; set; }
     public DbSet<ProductImage> ProductImages { get; set; }
     public DbSet<ProductReview> ProductReviews { get; set; }
+    public DbSet<ProductSize> ProductSizes { get; set; }
 
     public BaseDbContext(DbContextOptions dbContextOptions, IConfiguration configuration)
         : base(dbContextOptions)

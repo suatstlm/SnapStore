@@ -25,6 +25,7 @@ using Application.Services.Products;
 using Application.Services.ProductDescriptions;
 using Application.Services.ProductImages;
 using Application.Services.ProductReviews;
+using Application.Services.ProductSizes;
 
 namespace Application;
 
@@ -71,6 +72,7 @@ public static class ApplicationServiceRegistration
         services.AddScoped<IProductDescriptionService, ProductDescriptionManager>();
         services.AddScoped<IProductImageService, ProductImageManager>();
         services.AddScoped<IProductReviewService, ProductReviewManager>();
+        services.AddScoped<IProductSizeService, ProductSizeManager>();
         return services;
     }
 
